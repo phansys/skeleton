@@ -39,3 +39,10 @@ services:
         arguments:
             - bar
         lazy: true
+
+    App\Service\ServiceHandler:
+        arguments:
+            -
+                !php/const App\Service\Foo::KEY: '@App\Service\Foo'
+                !php/const App\Service\Bar::KEY: '@App\Service\Bar'
+        public: true
